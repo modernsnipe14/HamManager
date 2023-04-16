@@ -80,4 +80,4 @@ async def on_ready():
         await asyncio.sleep(3600)
 
 
-client.run('MTA3MjM0NDMwNzk0MTUyNzU3Mg.GCigf5.NMnA8dm6XuZY9t3Egu0AexvxyZ3P1Xlv0REKkI')
+client.run('DISCORD BOT TOKEN')
