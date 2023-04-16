@@ -18,13 +18,7 @@ async def on_message(message):
         response = requests.get(f'https://xmldata.qrz.com/xml/current/?s={callsign};callsign')
         xml_data = response.content.decode('utf-8')
         if '<Session>' in xml_data:
-                name_start = xml_data.find('<fname>')
-                name_end = xml_data.find('</fname>')
-                if name_start != -1 and name_end != -1:
-                    name = xml_data[name_start + len('<fname>'):name_end]
-                 else:
-                    name = 'Unknown'
-
+            name = xml_data.split('<fname>')[1].split('</fname>')[0]
             qth = xml_data.split('<addr2>')[1].split('</addr2>')[0]
             country = xml_data.split('<country>')[1].split('</country>')[0]
             grid = xml_data.split('<grid>')[1].split('</grid>')[0]
